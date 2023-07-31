@@ -1,0 +1,256 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Resume Builder</title>
+
+    <link rel="stylesheet" href="resume.css">
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
+
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css"
+        integrity="sha512-+4zCK9k+qNFUR5X+cKL9EIR+ZOhtIloNl9GIKS57V1MyNsYpYcUrUeQc9vNfzsWfV28IaLL3i96P9sdNyeRssA=="
+        crossorigin="anonymous" />
+</head>
+
+<body>
+    <div class="container" id="cv-form">
+
+        <h2 class="text-center py-2">Resume Builder</h2>
+        <p class="text-center">Easy resume building</p>
+        <hr class="line">
+        <!-- ------------------------- -->
+
+        <div class="row ">
+            <div class="col-md-6">
+                <h3 class="text-center">Personal details</h3>
+
+                <div class="form-group  ">
+                    <label for="namefield" class="text">Your name</label>
+                    <input type="text" id="namefield" placeholder="Enter your name" class="form-control" />
+                </div>
+                <h3 class="text-center my-2">Important Links</h3>
+
+                <div class="form-group ">
+                    <label for="mailfield" class="text">E-Mail</label>
+                    <input type="text" id="mailfield" placeholder="Paste your link here" class="form-control" />
+                </div>
+                <div class="form-group ">
+                    <label for="linkedinfield" class="text">Linkedin</label>
+                    <input type="text" id="linkedinfield" placeholder="Paste your link here" class="form-control" />
+                </div>
+                <div class="form-group ">
+                    <label for="gitfield" class="text">Github</label>
+                    <input type="text" id="githubfield" placeholder="Paste your link here" class="form-control" />
+                </div>
+                <div class="form-group ">
+                    <label for="contactfield" class="text">Contact number </label>
+                    <input type="text" id="phonefield" placeholder="Enter your contact number" class="form-control" />
+                </div>
+                <!-- --------------------------------------  -->
+
+                <div class="form-group mt-2 " id="ed">
+                    <h3 class="text-center">Education</h3>
+
+                    <label for="" class="text">College</label>
+                    <textarea placeholder="Enter your college name" class="form-control edfield"
+                        id="colnamefield"></textarea>
+                    <textarea placeholder="Enter your enrolment year" class="form-control edfield my-2"
+                        id="colyearfield"></textarea>
+                    <textarea placeholder="Enter your college details" class="form-control edfield my-2"
+                        id="coldetailfield"></textarea>
+
+                    <label for="">Intermediate</label>
+                    <textarea placeholder="Enter your School name" class="form-control edfield"
+                        id="internamefield"></textarea>
+                    <textarea placeholder="Enter your enrolment year" class="form-control edfield my-2"
+                        id="interyearfield"></textarea>
+                    <textarea placeholder="Enter your school details" class="form-control edfield my-2"
+                        id="interdetailfield"></textarea>
+
+                </div>
+
+            </div>
+
+
+            <div class=" col-md-6 my-5">
+
+                <label for="">Matriculation</label>
+                <textarea placeholder="Enter your School name" class="form-control edfield"
+                    id="matricnamefield"></textarea>
+                <textarea placeholder="Enter your enrolment year" class="form-control edfield my-2"
+                    id="matricyearfield"></textarea>
+                <textarea placeholder="Enter your school details" class="form-control edfield my-2"
+                    id="matricdetailfield"></textarea>
+
+                <!-- ---------------------------------------  -->
+                <h3 class="text-center">Profesional details</h3>
+
+                <div class="form-group " id="project">
+                    <label for="">Projects</label>
+                    <textarea placeholder="Add your projects" class="form-control projectfield" rows="5"></textarea>
+
+                    <div class="container text-center" id="projectAddButton">
+                        <button onclick="addNewfield2()" class="btn btn-primary btn-sm my-2">Add</button>
+                    </div>
+                </div>
+
+                <!-- -----------------------------------  -->
+
+                <div class="form-group " id="skills">
+                    <label for="">Technical Skills</label>
+                    <textarea placeholder="Add your skills" class="form-control skillsfield" rows="2"></textarea>
+
+                    <div class="container text-center" id="skillsAddButton">
+                        <button onclick="addNewfield3()" class="btn btn-primary btn-sm my-2">Add</button>
+                    </div>
+                    <!-- -----------------------------------  -->
+
+                    <div class="form-group " id="achievement">
+                        <label for="">Achievements</label>
+                        <textarea placeholder="Add your achievements" class="form-control achievementfield"
+                            rows="2"></textarea>
+
+                        <div class="container text-center" id="achievementAddButton">
+                            <button onclick="addNewfield4()" class="btn btn-primary btn-sm my-2">Add</button>
+                        </div>
+                    </div>
+                    <!-- -----------------------------------  -->
+                    <div class="form-group " id="Intrest">
+                        <label for="">Intrests</label>
+                        <textarea placeholder="Add your intrests" class="form-control Intrestfield" rows="2"></textarea>
+
+                        <div class="container text-center" id="IntrestAddButton">
+                            <button onclick="addNewfield5()" class="btn btn-primary btn-sm my-2">Add</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="container text-center my-4">
+                <button onclick="generateCv()" class="btn btn-primary btn-lg" id="generateCv">Generate CV</button>
+            </div>
+        </div>
+    </div>
+
+
+    <!-- -------------------------------Tempelate--------------------------------- -->
+
+    <div class="container" id="cv-template">
+        <h2 class="text-center py-2" style="color: black !important;">Resume</h2>
+        <hr>
+        <h3 class="text-center py-3" id="name" style="color: black !important;">Raj Nandan</h3>
+        <div class="social-links text-center">
+            <a href="#" style="text-decoration:none"> <i class="fa fa-envelope mx-2" id="email">
+                    nandanr532@gmai.com</i> </a>
+            <div class="vr"></div>
+            <a href="#" style="text-decoration:none"><i class="fab fa-linkedin-in mx-2" id="linkedin">
+                    https://www.linkedin.com/in/raj-nandan-4a4b5a231/</i> </a>
+            <div class="vr"></div>
+            <a href="#" style="text-decoration:none"><i class="fab fa-github mx-2" id="github">
+                    https://github.com/Raj-nandan</i> </a>
+            <div class="vr"></div>
+            <a href="#" style="text-decoration:none"> <i class="fa fa-phone mx-2" id="phone"> 8409452277</i> </a>
+        </div>
+        <br>
+        <h5>EDUCATION</h5>
+        <hr>
+        <div class="education">
+            <div class="college ">
+                <h6 id="colname">College Of Engineering Roorkee,Roorkee</h6>
+                <p id="colyear" style="float: right;">Aug 2021 - Aug 2025</p>
+                <p id="coldetail">B.Tech in Information and Technology</p>
+            </div>
+            <div class="intermediate ">
+                <h6 id="intername">Millia Convent English School, Kasba</h6>
+                <p id="interyear" style="float: right;">April,2020</p>
+                <p id="interdetail">Higher Secondry in science from CBSE Board, 68%</p>
+            </div>
+            <div class="matriculation ">
+                <h6 id="matricname">Millia Convent English School, Kasba</h6>
+                <p id="matricyear" style="float: right;">April 2019</p>
+                <p id="matricdetail">Matriculation from CBSE Board, 88.4%</p>
+            </div>
+            <br>
+        </div>
+        <h5>PROJECTS</h5>
+        <hr>
+        <div class="projects" id="projectsT">
+
+            <ul>
+                <li>
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempore, delectus?
+                </li>
+                <li>
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempore, delectus?
+                </li>
+                <li>
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempore, delectus?
+                </li>
+            </ul>
+        </div>
+        <br>
+        <h5>Skills</h5>
+        <hr>
+        <div class="skills" id="skillsT">
+            <ul>
+                <li>
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempore, delectus?
+                </li>
+                <li>
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempore, delectus?
+                </li>
+                <li>
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempore, delectus?
+                </li>
+            </ul>
+        </div>
+        <br>
+        <h5>Achievement</h5>
+        <hr>
+        <div class="achievement" id="achievementT">
+            <ul>
+                <li>
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempore, delectus?
+                </li>
+                <li>
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempore, delectus?
+                </li>
+                <li>
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempore, delectus?
+                </li>
+            </ul>
+        </div>
+        <br>
+        <h5>Intrests</h5>
+        <hr>
+        <div class="intrest" id="intrestT">
+            <ul>
+                <li>
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempore, delectus?
+                </li>
+                <li>
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempore, delectus?
+                </li>
+                <li>
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempore, delectus?
+                </li>
+            </ul>
+        </div>
+        <div class="download text-center my-4">
+            <button onclick="Downloadcv()" class="btn btn-primary btn-lg mb-2" id="downloadcv">Download CV</button>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm"
+        crossorigin="anonymous"></script>
+
+    <script src="resume.js"></script>
+</body>
+
+</html>
